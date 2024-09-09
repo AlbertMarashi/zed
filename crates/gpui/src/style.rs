@@ -376,7 +376,7 @@ impl TextStyle {
         }
 
         if let Some(color) = style.color {
-            self.color = self.color.blend(color);
+            self.color = color;
         }
 
         if let Some(factor) = style.fade_out {
@@ -796,8 +796,8 @@ impl HighlightStyle {
     /// Non-continuous properties, like font_weight and font_style, are overwritten.
     pub fn highlight(&mut self, other: HighlightStyle) {
         match (self.color, other.color) {
-            (Some(self_color), Some(other_color)) => {
-                self.color = Some(Hsla::blend(other_color, self_color));
+            (Some(_), Some(other_color)) => {
+                self.color = Some(other_color);
             }
             (None, Some(other_color)) => {
                 self.color = Some(other_color);

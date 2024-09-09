@@ -17,7 +17,7 @@ use cocoa::{
     base::{id, nil},
     foundation::{
         NSArray, NSAutoreleasePool, NSDictionary, NSFastEnumeration, NSInteger, NSPoint, NSRect,
-        NSSize, NSString, NSUInteger,
+        NSRectEdge, NSSize, NSString, NSUInteger,
     },
 };
 use core_graphics::display::{CGDirectDisplayID, CGPoint, CGRect};
